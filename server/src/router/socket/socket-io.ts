@@ -1,8 +1,9 @@
-import { UserList } from "../../model/user";
 import { Socket } from "socket.io/dist/socket";
 import { Server } from "https";
 
 const socketIo = require('socket.io');
+const users = require('../../repository/Users');
+
 const getApiAndEmit = (socket: Socket) => {
     const response = new Date();
     // Emitting a new message. Will be consumed by the client
@@ -15,17 +16,16 @@ module.exports = {
 
         let interval: NodeJS.Timer | undefined;
 
-        const users: UserList = {};
-
         const onConnect = (socket: Socket) => {
             console.log("A user connected");
-            users[socket.id] = {
+            const user = {
                 username: "username",
                 userId: socket.id
             }
+            users.addUser(user);
 
-            socket.emit('socket:currentUsers', users);
-            socket.broadcast.emit('socket:newUser', users[socket.id]);
+            socket.emit('socket:currentUsers', users.getUsers());
+            socket.broadcast.emit('socket:newUser', users.getUsers()[socket.id]);
 
             if (interval) {
                 clearInterval(interval);

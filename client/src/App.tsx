@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import LoginPage from "./pages/LoginPage/LoginPage";
+import LoginPage from './pages/LoginPage/LoginPage';
+import './App.scss';
 
 function App() {
   return (
-    <div>
+    <div className={"app"}>
         XarXsDev Inc.
       <Router>
         <Route path={'/'} exact component={LoginPage} />
