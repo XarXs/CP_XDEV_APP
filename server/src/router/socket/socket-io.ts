@@ -2,7 +2,7 @@ import { Socket } from "socket.io/dist/socket";
 import { Server } from "https";
 
 const socketIo = require('socket.io');
-const users = require('../../repository/Users');
+//const users = require('../../repository/Users');
 
 const getApiAndEmit = (socket: Socket) => {
     const response = new Date();
@@ -18,14 +18,14 @@ module.exports = {
 
         const onConnect = (socket: Socket) => {
             console.log("A user connected");
-            const user = {
+            /*const user = {
                 username: "username",
                 userId: socket.id
             }
             users.addUser(user);
 
             socket.emit('socket:currentUsers', users.getUsers());
-            socket.broadcast.emit('socket:newUser', users.getUsers()[socket.id]);
+            socket.broadcast.emit('socket:newUser', users.getUsers()[socket.id]);*/
 
             if (interval) {
                 clearInterval(interval);
