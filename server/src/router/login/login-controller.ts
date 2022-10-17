@@ -1,9 +1,7 @@
-const users = require('../../repository/Users');
+import users from '../../repository/Users';
 
 const loginAddUser = async (req: any, res: any) => {
     try {
-        console.log(req);
-        console.log(req.body);
         const {username, password} = req.body;
         users.addUser({username, password});
         res.json({}).status(200);
@@ -12,6 +10,4 @@ const loginAddUser = async (req: any, res: any) => {
     }
 };
 
-module.exports = {
-    loginAddUser
-}
+export default {loginAddUser};

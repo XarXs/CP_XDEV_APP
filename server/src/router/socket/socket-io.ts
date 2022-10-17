@@ -1,5 +1,6 @@
 import { Socket } from "socket.io/dist/socket";
-import { Server } from "https";
+import { Server } from "http";
+import { IncomingMessage, ServerResponse } from "http";
 
 const socketIo = require('socket.io');
 //const users = require('../../repository/Users');
@@ -10,8 +11,8 @@ const getApiAndEmit = (socket: Socket) => {
     socket.emit('FromAPI', response);
 };
 
-module.exports = {
-    getIo: (server: Server) => {
+export default {
+    getIo: (server: Server<typeof IncomingMessage, typeof ServerResponse>) => {
         const io = socketIo(server);
 
         let interval: NodeJS.Timer | undefined;

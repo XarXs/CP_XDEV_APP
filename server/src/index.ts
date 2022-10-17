@@ -1,10 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const http = require('http');
+import express from "express";
+import cors from 'cors';
+import http from 'http';
 
-const config = require('./config/server-config');
-const router = require('./router/index');
-const socketIo = require('./router/socket/socket-io');
+import config from './config/server-config';
+import router from './router/index';
+import socketIo from './router/socket/socket-io';
 
 const corsOptions = {
     origin: 'http://localhost:3000',
@@ -20,6 +20,9 @@ app.use(config.baseUrl, router)
 const server = http.createServer(app);
 
 server.listen(config.port, () => {
-   console.log(`Listening on port ${server.address().port}`);
-   socketIo.getIo(server);
+    if (server != null) {
+        // @ts-ignore
+        console.log(`Listening on port ${server.address().port}`);
+        socketIo.getIo(server);
+    }
 });
