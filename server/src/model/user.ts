@@ -1,6 +1,5 @@
-import { SocketId } from "socket.io-adapter";
-
 export interface User {
+    tokenId: string;
     username: string;
     password: string;
 }
