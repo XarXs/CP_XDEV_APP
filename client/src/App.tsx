@@ -8,11 +8,11 @@ import './App.scss';
 function App() {
   return (
     <div className={'app'}>
-            XarXsDev Inc.
+      XarXsDev Inc.
       <Router>
         <Routes>
-          <Route path='/' element={<LoginPage/>}/>
-          <Route path='/chat' element={<ChatPage/>}/>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/chat" element={<ChatPage />} />
         </Routes>
       </Router>
     </div>

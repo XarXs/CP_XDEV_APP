@@ -1,0 +1,15 @@
+@import '../../assets/styles/colors';
+
+.chat-page {
+  height: 100%;
+
+  &-chat-container {
+    border: 1px solid $blue-light;
+    height: 100%;
+  }
+
+  &-input-container {
+    border: 1px solid $blue-light;
+    height: 5rem;
+  }
+}
