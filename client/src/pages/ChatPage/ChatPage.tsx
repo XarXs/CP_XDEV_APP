@@ -1,0 +1,13 @@
+import React from 'react';
+
+import './ChatPage.scss';
+
+const ChatPage = () => {
+  return (
+    <div className={'chat-page'}>
+            Chat Page
+    </div>
+  );
+};
+
+export default ChatPage;
