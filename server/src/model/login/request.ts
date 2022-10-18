@@ -1,8 +1,8 @@
 export interface Request {
-    body: ReqBody
+  body: ReqBody;
 }
 
 interface ReqBody {
-    username: string;
-    password: string;
+  username: string;
+  password: string;
 }
