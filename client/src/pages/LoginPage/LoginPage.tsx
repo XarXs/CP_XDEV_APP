@@ -23,28 +23,25 @@ const LoginPage = () => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-        .then((response) => response.json())
-        .then((data) => {
-          const result = data.result;
-          if (result.code === 200) {
-            const token = result.tokenId;
-            localStorage.setItem('token', token);
-            navigate('/chat');
-          }
-        })
-        .catch((err) => {
-          console.error(err.message);
-        });
+      .then(response => response.json())
+      .then(data => {
+        const result = data.result;
+        if (result.code === 200) {
+          const token = result.tokenId;
+          localStorage.setItem('token', token);
+          navigate('/chat');
+        }
+      })
+      .catch(err => {
+        console.error(err.message);
+      });
   };
 
   return (
     <div className={'login-page'}>
-            LoginPage
+      LoginPage
       <form onSubmit={handleSubmit}>
-        <InputComponent
-          label={'Username'}
-          name={'username'}
-        />
+        <InputComponent label={'Username'} name={'username'} />
         <InputComponent
           type={'password'}
           label={'Password'}
