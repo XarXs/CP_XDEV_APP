@@ -1,0 +1,48 @@
+@import '../../assets/styles/colors';
+
+.user {
+  color: $blue-light;
+  float: right;
+}
+
+.other {
+  color: white;
+  float: left;
+}
+
+.admin {
+  color: #ff8400;
+  float: left;
+}
+
+.message-component {
+  margin: 0 1rem 1rem;
+  padding: 1rem;
+  width: 80%;
+
+  &-user {
+    border: 1px solid $blue-light;
+    background-color: #6bcece45;
+    color: $blue-light;
+    float: right;
+  }
+
+  &-other {
+    border: 1px solid white;
+    background-color: #ffffff45;
+    color: white;
+    float: left;
+  }
+
+  &-admin {
+    border: 1px solid #ff8400;
+    background-color: #ff840044;
+    color: #ff8400;
+    float: left;
+    width: 80%;
+  }
+
+  &-label {
+    padding: 1rem 1rem 0;
+  }
+}
